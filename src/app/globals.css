@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Colores de Velaris (manual de marca) */
+@theme static {
+  --color-rosa: #f0b7b7;
+  --color-rosa-suave: #fff8f8;
+  --color-rosa-viejo: #b68b93;
+  --color-verde: #3d5033;
+}
+
+
+/* Fondo y color de texto de toda la aplicacion */
+body {
+  background: var(--color-rosa);
+  color: var(--color-verde);
+}
