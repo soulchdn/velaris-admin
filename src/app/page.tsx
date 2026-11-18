@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Secciones a ser construidas
-const secciones = ["Clientes", "Libros", "Ventas", "Pagos", "Reportes"];
+const secciones = ["Clientes", "Libros", "Ventas", "Pagos", "Entregas", "Reportes"];
 
 export default function Inicio() {
   return (
