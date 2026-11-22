@@ -1,7 +1,19 @@
 // Página de prueba: comprueba si la app puede llegar a Supabase.
 // La borraremos cuando la conexión esté confirmada.
 
-export default async function PruebaPage() {
+import { Suspense } from "react";
+
+export default function PruebaPage() {
+    return (
+        <main className="min-h-screen flex items-center justify-center p-8">
+            <Suspense fallback={<p className="text-xl">Comprobando...</p>}>
+                <EstadoConexion />
+            </Suspense>
+        </main>
+    );
+}
+
+async function EstadoConexion() {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL; 
     const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
@@ -26,10 +38,8 @@ export default async function PruebaPage() {
     }
 
     return (
-        <main className="min-h-screen flex items-center justify-center p-8">
             <p className="text-xl text-verde">
                 {ok ? "✅" : "❌"} {mensaje}
             </p>
-        </main>
     );
 }
