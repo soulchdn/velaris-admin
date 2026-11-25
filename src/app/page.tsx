@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cerrarSesion } from "./login/actions";
 
 // Secciones a ser construidas
 const secciones = ["Clientes", "Libros", "Ventas", "Pagos", "Entregas", "Reportes"];
@@ -14,7 +15,7 @@ export default function Inicio() {
             alt="Velaris, tienda literaria"
             width={816}
             height={288}
-            priority
+            preload
             className="h-auto w-full"
           />
         </div>
@@ -36,6 +37,12 @@ export default function Inicio() {
               </li>
             ))}
           </ul>
+
+          <form action={cerrarSesion} className="mt-8">
+            <button type="submit" className="w-full rounded-2xl border-2 border-rosa px-4 py-3 font-semibold">
+              Cerrar Sesión
+            </button>
+          </form>
         </div>
       </div>
     </main>
