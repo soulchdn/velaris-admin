@@ -1,8 +1,16 @@
+import Link from "next/link";
 import Image from "next/image";
 import { cerrarSesion } from "./login/actions";
 
 // Secciones a ser construidas
-const secciones = ["Clientes", "Libros", "Ventas", "Pagos", "Entregas", "Reportes"];
+const secciones = [
+  { nombre: "Clientes", direccion: "/clientes" },
+  { nombre: "Libros", direccion: null },
+  { nombre: "Ventas", direccion: null },
+  { nombre: "Pagos", direccion: null },
+  { nombre: "Entregas", direccion: null },
+  { nombre: "Reportes", direccion: null },
+];
 
 export default function Inicio() {
   return (
@@ -30,10 +38,17 @@ export default function Inicio() {
           <ul className="mt-6 grid grid-cols-2 gap-3">
             {secciones.map((seccion) => (
               <li
-                key={seccion}
-                className="rounded-2xl border-2 border-rosa px-4 py-3 text-center font-medium"
-              >
-                {seccion}
+                key={seccion.nombre}>
+                {seccion.direccion ? (
+                  <Link href={seccion.direccion}
+                    className="block rounded-2xl border-2 border-rosa px-4 py-3 text-center font-medium">
+                    {seccion.nombre}
+                  </Link>
+                ) : (
+                  <span className="block rounded-2xl border-2 border-rosa px-4 py-3 text-center font-medium opacity-50">
+                    {seccion.nombre}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
