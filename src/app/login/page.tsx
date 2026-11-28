@@ -22,7 +22,7 @@ export default function PaginaLogin() {
                 {/* Contenido de la tarjeta */}
                 <div className="p-8">
                     <h1 className="text-2xl font-semibold">Iniciar sesión</h1>
-                    <p className="mt-1">Entrá con tu correo y contraseña.</p>
+                    <p className="mt-1">Ingresa con tu correo y contraseña.</p>
                     <Formulario />
                 </div>
             </div>
