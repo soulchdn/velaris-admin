@@ -12,8 +12,15 @@ export default function PaginaClientes() {
                 <Link href="/" className="text-sm font-medium underline">
                     ← Volver al inicio
                 </Link>
-                <h1 className="mt-4 text-2xl font-semibold">Clientes</h1>
-
+                <div className="mt-4 flex items-center justify-between gap-4">
+                    <h1 className="text-2xl font-semibold">Clientes</h1>
+                    <Link
+                        href="/clientes/nuevo"
+                        className="rounded-2xl bg-rosa px-4 py-2 font-semibold text-carbon"
+                    >
+                        Agregar cliente
+                    </Link>
+                </div>
                 {/* La lista se carga aparte: mientras llega, se muestra el mensaje de espera. */}
                 <Suspense fallback={<p className="mt-6">Cargando clientes...</p>}>
                     <ListaClientes />
